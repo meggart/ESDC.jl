@@ -1,0 +1,6 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+ESDC = "78cc4143-e042-47c7-b459-414d105d7ed4"
+
+[compat]
+Documenter = "~0.24"
