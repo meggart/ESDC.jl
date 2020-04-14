@@ -1,5 +1,5 @@
 module ESDC
-import ESDL.Datasets: Dataset, Cube, ZarrDataset
+import ESDL.Datasets: Dataset, Cube, open_dataset
 using ESDL.Zarr: S3Store, zopen, aws_config
 using Dates: Dates, now
 export esdc, esdd
@@ -40,7 +40,7 @@ function esdd(;bucket=nothing, store="", res="low", chunks="ts", region="global"
   if bucket==nothing
     bucket, store = cubesdict[(res,chunks,region)]
   end
-  Dataset(ZarrDataset(zopen(S3Store(bucket,store,2,aws),consolidated=true)))
+  open_dataset(zopen(S3Store(bucket,store,2,aws),consolidated=true))
 end
 
 """
