@@ -1,6 +1,6 @@
 module ESDC
 import ESDL.Datasets: Dataset, Cube, open_dataset
-using ESDL.Zarr: S3Store, zopen, aws_config
+using Zarr: S3Store, zopen, aws_config
 using Dates: Dates, now
 export esdc, esdd
 global aws, cubesdict
